@@ -1,0 +1,7 @@
+List<Integer> input = new List<Integer>{64,25,12,22,11};
+
+System.debug('INPUT: ' + input);
+
+List<Integer> result = SelectionSortUtil.selectionSort(input);
+
+System.debug('OUTPUT: ' + result);
