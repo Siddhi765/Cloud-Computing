@@ -1,0 +1,47 @@
+public class SelectionSortUtil {
+
+    // 🔹 Selection Sort with Debugging
+    public static List<Integer> selectionSort(List<Integer> arr) {
+
+        System.debug('INPUT ARRAY: ' + arr);
+
+        if (arr == null) {
+            System.debug('Array is NULL');
+            return arr;
+        }
+
+        Integer n = arr.size();
+
+        for (Integer i = 0; i < n - 1; i++) {
+
+            Integer minIdx = i;
+            System.debug('--- Outer Loop i = ' + i + ' ---');
+
+            for (Integer j = i + 1; j < n; j++) {
+
+                System.debug('Comparing arr[' + j + '] = ' + arr[j] +
+                             ' with arr[' + minIdx + '] = ' + arr[minIdx]);
+
+                if (arr[j] < arr[minIdx]) {
+                    minIdx = j;
+                    System.debug('New minIdx found = ' + minIdx);
+                }
+            }
+
+            // Swap elements
+            if (minIdx != i) {
+
+                System.debug('Swapping ' + arr[i] + ' and ' + arr[minIdx]);
+
+                Integer temp = arr[i];
+                arr[i] = arr[minIdx];
+                arr[minIdx] = temp;
+            }
+
+            System.debug('Array after iteration ' + i + ': ' + arr);
+        }
+
+        System.debug('FINAL SORTED ARRAY: ' + arr);
+        return arr;
+    }
+}
